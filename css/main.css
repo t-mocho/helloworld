@@ -1,0 +1,83 @@
+/*ふわっと表示*/
+body {
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+/*余白削除+背景色*/
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: #89d0ed;
+}
+
+/*メインページ*/
+#main {
+  font-family: "游ゴシック Light", "游ゴシック", "YuGothic", sans-serif;
+  font-weight: 200;
+  background: #fff;
+  height: 100%;
+  width: 70%;
+}
+
+#main_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#main_text {
+  /*アニメーション*/
+  animation-name: slideIn;
+  animation-duration: 3s;
+}
+
+h1 {
+  font-family: 'Reenie Beanie', sans-serif;
+  margin: 10px;
+  font-size: 5em;
+  color: #89d0ed;
+}
+
+#main p {
+  margin: 0;
+}
+
+/*要素をスライドイン*/
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
