@@ -2,7 +2,8 @@ $(function() {
   function startAnime() {
     startIn()
       .then(startOut)
-      .then(menuIn);
+      .then(menuIn)
+      .then(mainIn);
   }
 
   // startInの処理
@@ -16,7 +17,7 @@ $(function() {
 
   function startOut() {
     var d = new $.Deferred;
-    $("#start").toggle('clip', 1500, function() {
+    $("#start").toggle('clip', 1000, function() {
       d.resolve();
     });
     return d.promise();
@@ -24,7 +25,17 @@ $(function() {
 
   function menuIn() {
     var d = new $.Deferred;
-    $(".no-display").fadeIn(1500, function() {
+    $("#menu").delay(500).animate({
+      width: 'toggle'
+    }, 'slow', function() {
+      d.resolve();
+    });
+    return d.promise();
+  }
+
+  function mainIn() {
+    var d = new $.Deferred;
+    $("#main").fadeIn(1500, function() {
       d.resolve();
     });
     return d.promise();
